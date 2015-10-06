@@ -14,7 +14,7 @@ let AppComponent = React.createClass({
     questionSerial: 0
   }),
 
-  handleOptionClick: function() {
+  handleOptionClick: function(event) {
 
     let currentSerial = this.state.questionSerial;
     let totalQuestionCount = this.props.survey.length;
@@ -24,15 +24,16 @@ let AppComponent = React.createClass({
       nextStage = 'result';
     }
 
+    let optionScore = event.target.dataset.score;
 
     this.setState({
       questionSerial: this.state.questionSerial + 1,
-      stage: nextStage,
+      totalScore: this.state.totalScore + Number(optionScore),
+      stage: nextStage
     });
   },
 
   startQuestion: function() {
-    console.log('click');
     this.setState({
       stage: 'qa'
     });
