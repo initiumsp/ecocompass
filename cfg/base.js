@@ -1,8 +1,8 @@
 var path = require('path');
 
-var port = 2046;
-var srcPath = path.join(__dirname, '/../src');
-var publicPath = 'assets/';
+var port = 8000;
+var srcPath = path.join(__dirname, '../src');
+var publicPath = '/assets/';
 
 module.exports = {
   port: port,

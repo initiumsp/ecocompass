@@ -2,7 +2,10 @@ var path = require('path');
 var webpack = require('webpack');
 var _ = require('lodash');
 
+var relativePublicPath = 'assets/';
+
 var baseConfig = require('./base');
+baseConfig.output.publicPath = relativePublicPath;
 
 var config = _.merge({
   entry: path.join(__dirname, '../src/components/run'),
