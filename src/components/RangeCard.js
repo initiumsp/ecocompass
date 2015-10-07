@@ -37,16 +37,34 @@ let RangeCard = React.createClass({
     let {min, max, text, nextQuestionButtonClickHandler} = this.props
 
     return (
-      <div>
-        <div>{text}</div>
-        <div>{this.state.currentValue}</div>
-        <span>{min}</span>
-        <input type='range'
-               min={min} max={max} value={this.state.currentValue}
-               onChange={this.rangeSlideLocalHandler} />
-        <span>{max}</span>
-        <button onClick={nextQuestionButtonClickHandler}>Next</button>
+    <div id='wrapper'>
+      <div className='row' id='first'>
+        <div id='leftUp'></div>
+        <div id='up'></div>
+        <div id='rightUp'></div>
       </div>
+      <div className='row' id='second'>
+        <div id='left'></div>
+        <div id='middle'>
+          <div>{text}</div>
+          <div>{this.state.currentValue}</div>
+          <span>{min}</span>
+          <input type='range'
+                 min={min} max={max} value={this.state.currentValue}
+                 onChange={this.rangeSlideLocalHandler} />
+          <span>{max}</span>
+          <button onClick={nextQuestionButtonClickHandler}>Next</button>
+        </div>
+        <div id='right'></div>
+      </div>
+      <div className='row' id='third'>
+        <div id='leftDown'></div>
+        <div id='down'></div>
+        <div id='rightDown'></div>
+      </div>
+    </div>
+
+
     )
   }
 })
