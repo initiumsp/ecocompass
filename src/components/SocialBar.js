@@ -75,6 +75,7 @@ let SocialBar = React.createClass({
       platform: chosenPlatform,
       targetUrl: window.location.origin
     })
+    this.props.tracker.post('share_button_click', chosenPlatform)
     window.open(shareUrl)
   },
 
@@ -85,6 +86,8 @@ let SocialBar = React.createClass({
     } else {
       display = 'none'
     }
+
+    this.props.tracker.post('share_button_click', 'wechat')
 
     this.setState({
       displayWechatQrImage: display
