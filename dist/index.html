@@ -11,6 +11,12 @@
   <div id="app">APPLICATION CONTENT</div>
 
   <script>__REACT_DEVTOOLS_GLOBAL_HOOK__ = parent.__REACT_DEVTOOLS_GLOBAL_HOOK__</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xdomain/0.7.3/xdomain.min.js"></script>
+  <script>
+    xdomain.slaves({
+      "http://s.init.im:8081": "/proxy.html"
+    });
+  </script>
   <script type="text/javascript" src="assets/app.js"></script>
 </body>
 </html>
