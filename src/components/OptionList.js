@@ -1,7 +1,7 @@
-require('normalize.css');
-require('styles/App.css');
+require('normalize.css')
+require('styles/App.css')
 
-import React from 'react/addons';
+import React from 'react/addons'
 
 let OptionList = ({options, optionClickHandler}) => <ul>
     {options.map(option => <li key={option.optionText}
@@ -12,4 +12,4 @@ let OptionList = ({options, optionClickHandler}) => <ul>
     }
   </ul>
 
-export default OptionList;
+export default OptionList

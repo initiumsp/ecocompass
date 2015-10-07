@@ -1,9 +1,9 @@
-require('normalize.css');
-require('styles/App.css');
+require('normalize.css')
+require('styles/App.css')
 
-import React from 'react/addons';
-import QuestionText from './QuestionText';
-import OptionList from './OptionList';
+import React from 'react/addons'
+import QuestionText from './QuestionText'
+import OptionList from './OptionList'
 
 let QACard = ({qa, optionClickHandler}) =>
   <div>
@@ -11,4 +11,4 @@ let QACard = ({qa, optionClickHandler}) =>
     <OptionList options={qa.options} optionClickHandler={optionClickHandler} />
   </div>
 
-export default QACard;
+export default QACard

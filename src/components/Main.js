@@ -1,10 +1,10 @@
-require('normalize.css');
-require('styles/App.css');
+require('normalize.css')
+require('styles/App.css')
 
-import React from 'react/addons';
-import Cover from './Cover';
-import QACard from './QACard';
-import ResultPage from './ResultPage';
+import React from 'react/addons'
+import Cover from './Cover'
+import QACard from './QACard'
+import ResultPage from './ResultPage'
 
 let AppComponent = React.createClass({
 
@@ -14,49 +14,46 @@ let AppComponent = React.createClass({
     questionSerial: 0
   }),
 
-  handleOptionClick: function(event) {
+  handleOptionClick: function (event) {
 
-    let currentSerial = this.state.questionSerial;
-    let totalQuestionCount = this.props.survey.length;
-    let nextStage = 'qa';
+    let currentSerial = this.state.questionSerial
+    let totalQuestionCount = this.props.survey.length
+    let nextStage = 'qa'
 
     if (currentSerial + 1 === totalQuestionCount) {
-      nextStage = 'result';
+      nextStage = 'result'
     }
 
-    let optionScore = event.target.dataset.score;
+    let optionScore = event.target.dataset.score
 
     this.setState({
       questionSerial: this.state.questionSerial + 1,
       totalScore: this.state.totalScore + Number(optionScore),
       stage: nextStage
-    });
+    })
   },
 
-  startQuestion: function() {
+  startQuestion: function () {
     this.setState({
       stage: 'qa'
-    });
+    })
   },
 
-  render: function() {
+  render: function () {
 
     if (this.state.stage === 'cover') {
       return <Cover coverClickHandler={this.startQuestion} />
-
     } else if (this.state.stage === 'qa') {
-      let serial = this.state.questionSerial;
-      let qa = this.props['survey'][serial];
+      let serial = this.state.questionSerial
+      let qa = this.props['survey'][serial]
       return <QACard qa={qa} optionClickHandler={this.handleOptionClick} />
-
     } else {
       return <ResultPage score={this.state.totalScore} />
     }
-
   }
-});
+})
 
 AppComponent.defaultProps = {
-};
+}
 
-export default AppComponent;
+export default AppComponent

@@ -40,9 +40,9 @@ let survey = [
       {
         optionText: '強烈反對',
         optionScore: 2
-      },
+      }
     ]
   }
-];
+]
 
-export default survey;
+export default survey

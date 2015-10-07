@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './Main';
-import survey from './data';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './Main'
+import survey from './data'
 
 // Render the main component into the dom
-ReactDOM.render(<App survey={survey} />, document.getElementById('app'));
+ReactDOM.render(<App survey={survey} />, document.getElementById('app'))
