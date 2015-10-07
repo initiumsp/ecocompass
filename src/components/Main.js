@@ -41,6 +41,8 @@ let AppComponent = React.createClass({
 
     let optionScore = event.target.dataset.score
 
+    this.tracker.post('question_' + this.props.survey[currentSerial].question, 'option_' + event.target.innerHTML)
+
     this.setState({
       questionSerial: this.state.questionSerial + 1,
       totalScore: this.state.totalScore + Number(optionScore),
@@ -48,7 +50,20 @@ let AppComponent = React.createClass({
     })
   },
 
-  startQuestion: function () {
+  handleRangeSlide: function (event) {
+    let currentSerial = this.state.questionSerial
+    this.tracker.post('question_' + this.props.survey[currentSerial].question, 'value_' + event.target.value)
+  },
+
+  handleNextQuestButtonClick: function (event) {
+    this.tracker.post('next_button_clicked', '')
+    this.setState({
+      questionSerial: this.state.questionSerial + 1
+      // We might need totalScore calculation here in the future
+    })
+  },
+
+  startQASection: function () {
     this.setState({
       stage: 'qa'
     })
@@ -56,24 +71,22 @@ let AppComponent = React.createClass({
 
   render: function () {
     if (this.state.stage === 'cover') {
-      return <Cover coverClickHandler={this.startQuestion} />
+      return <Cover coverClickHandler={this.startQASection} />
     } else if (this.state.stage === 'qa') {
       let serial = this.state.questionSerial
       let qa = this.props['survey'][serial]
-      let type = qa.optionType
-      if (type === 'multipleChoice') {
+      if (qa.optionType === 'multipleChoice') {
         return <ChoiceCard qa={qa}
-                           optionClickHandler={this.handleOptionClick}
-                           tracker={this.tracker} />
+                           optionClickHandler={this.handleOptionClick} />
       } else {
         return <RangeCard text={qa.question}
                           min={qa.optionMin}
                           max={qa.optionMax}
-                          tracker={this.tracker} />
+                          rangeSlideHandler={this.handleRangeSlide}
+                          nextQuestionButtonClickHandler={this.handleNextQuestButtonClick} />
       }
     } else {
-      return <ResultPage score={this.state.totalScore}
-                         tracker={this.tracker} />
+      return <ResultPage score={this.state.totalScore} />
     }
   }
 })

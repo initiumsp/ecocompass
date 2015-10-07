@@ -9,39 +9,43 @@ let RangeCard = React.createClass({
     min: React.PropTypes.number,
     max: React.PropTypes.number,
     text: React.PropTypes.string,
-    defaultValue: React.PropTypes.number
+    currentValue: React.PropTypes.number,
+    rangeSlideHandler: React.PropTypes.func,
+    nextQuestionButtonClickHandler: React.PropTypes.func
   },
 
   getDefaultProps: function () {
     return {
-      defaulValue: 50
+      currentValue: 50
     }
   },
 
   getInitialState: function () {
     return {
-      value: this.props.defaultValue
+      value: this.props.currentValue
     }
   },
 
-  updateDisplayedValue: function (event) {
-    console.log(event.target.value)
+  rangeSlideLocalHandler: function (event) {
     this.setState({
-      value: event.target
+      currentValue: event.target.value
     })
+    this.props.rangeSlideHandler(event)
   },
 
   render: function () {
-    let {min, max, text} = this.props
+    let {min, max, text, nextQuestionButtonClickHandler} = this.props
 
     return (
       <div>
         <div>{text}</div>
+        <div>{this.state.currentValue}</div>
         <span>{min}</span>
         <input type='range'
-               min={min} max={max}
-               onChange={this.updateDisplayedValue} />
+               min={min} max={max} value={this.state.currentValue}
+               onChange={this.rangeSlideLocalHandler} />
         <span>{max}</span>
+        <button onClick={nextQuestionButtonClickHandler}>Next</button>
       </div>
     )
   }

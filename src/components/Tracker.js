@@ -1,4 +1,4 @@
-let createTracker = (targetLabel) => ({
+let createInitiumLabTracker = (targetLabel) => ({
   target: targetLabel,
 
   init () {
@@ -47,4 +47,4 @@ let createTracker = (targetLabel) => ({
   }
 })
 
-export default createTracker
+export default createInitiumLabTracker
