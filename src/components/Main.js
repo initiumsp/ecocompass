@@ -42,7 +42,7 @@ let AppComponent = React.createClass({
 
     let optionScore = event.target.dataset.score
 
-    this.tracker.post('question_' + this.props.survey[currentSerial].question, 'option_' + event.target.innerHTML)
+    this.tracker.post('question_' + this.props.survey[currentSerial].question, 'option_' + event.target.textContent)
 
     this.setState({
       questionSerial: this.state.questionSerial + 1,
