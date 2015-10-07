@@ -149,6 +149,35 @@ li::before {
   width: 87px;
   position: absolute;
 }
+/*
+#checkbox {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  margin-right: 10px;
+}
+
+#checkbox:hover, #checkbox:visited {
+  background-color: white;
+}
+*/
+
+#optiontext {
+  display: inline-block;
+  height: 20px;
+  vertical-align: top;
+}
+
+
+#optiontext::before {
+  content: "○   "
+}
+
+#optiontext:hover::before{
+  content: "●   "
+}
 
 .rotate-clockwise {
   animation-name: pointer-rotate-clockwise;

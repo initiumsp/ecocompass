@@ -7,7 +7,8 @@ let OptionList = ({options, optionClickHandler}) => <ul>
     {options.map(option => <li key={option.optionText}
                                onClick={optionClickHandler}
                                data-score={option.optionScore}>
-                              {option.optionText}
+                              <span id='checkbox'></span>
+                              <span id='optiontext'>{option.optionText}</span>
                            </li>)
     }
   </ul>
