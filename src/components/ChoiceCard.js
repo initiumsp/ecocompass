@@ -5,10 +5,10 @@ import React from 'react'
 import QuestionText from './QuestionText'
 import OptionList from './OptionList'
 
-let QACard = ({qa, optionClickHandler}) =>
+let ChoiceCard = ({qa, optionClickHandler}) =>
   <div>
     <QuestionText text={qa.question} />
     <OptionList options={qa.options} optionClickHandler={optionClickHandler} />
   </div>
 
-export default QACard
+export default ChoiceCard

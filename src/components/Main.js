@@ -3,7 +3,8 @@ require('styles/App.css')
 
 import React from 'react'
 import Cover from './Cover'
-import QACard from './QACard'
+import ChoiceCard from './ChoiceCard'
+import RangeCard from './RangeCard'
 import ResultPage from './ResultPage'
 
 let AppComponent = React.createClass({
@@ -48,7 +49,12 @@ let AppComponent = React.createClass({
     } else if (this.state.stage === 'qa') {
       let serial = this.state.questionSerial
       let qa = this.props['survey'][serial]
-      return <QACard qa={qa} optionClickHandler={this.handleOptionClick} />
+      let type = qa.optionType
+      if (type === 'multipleChoice') {
+        return <ChoiceCard qa={qa} optionClickHandler={this.handleOptionClick} />
+      } else {
+        return <RangeCard text={qa.question} min={qa.optionMin} max={qa.optionMax} />
+      }
     } else {
       return <ResultPage score={this.state.totalScore} />
     }
