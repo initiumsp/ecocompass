@@ -5,6 +5,24 @@ import React from 'react'
 
 let coverImage = require('../images/cover.png')
 
-let Cover = ({coverClickHandler}) => <img src={coverImage} onClick={coverClickHandler} />
+let Cover = ({coverClickHandler}) =>
+  <div id='wrapper' onClick={coverClickHandler}>
+    <div className='row' id='first'>
+      <div id='leftUp'></div>
+      <div id='up'></div>
+      <div id='rightUp'></div>
+    </div>
+    <div className='row' id='second'>
+      <div id='left'></div>
+      <div id='middle'>
+      </div>
+      <div id='right'></div>
+    </div>
+    <div className='row' id='third'>
+      <div id='leftDown'></div>
+      <div id='down'></div>
+      <div id='rightDown'></div>
+    </div>
+  </div>
 
 export default Cover
