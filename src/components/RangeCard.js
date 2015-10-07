@@ -22,7 +22,7 @@ let RangeCard = React.createClass({
 
   getInitialState: function () {
     return {
-      value: this.props.currentValue
+      currentValue: this.props.currentValue
     }
   },
 
