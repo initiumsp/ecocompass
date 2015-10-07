@@ -4,6 +4,8 @@ require('styles/App.css')
 import React from 'react'
 import app_meta from '../sources/meta_data'
 
+let wechatQrImage = require('../images/wechatQr.png')
+
 function getShareUrl (config) {
   var platform = config.platform
   var facebookAppId = config.facebookAppId
@@ -49,6 +51,12 @@ let SocialBar = React.createClass({
     tracker: React.PropTypes.object
   },
 
+  getInitialState: function () {
+    return {
+      displayWechatQrImage: 'none'
+    }
+  },
+
   handleShareButtonClick: function (event) {
     var chosenPlatform = event.target.dataset.platform
     var shareTitle
@@ -70,6 +78,19 @@ let SocialBar = React.createClass({
     window.open(shareUrl)
   },
 
+  handleWechatShareButtonClick: function () {
+    var display;
+    if (this.state.displayWechatQrImage === 'none') {
+      display = 'block'
+    } else {
+      display = 'none'
+    }
+
+    this.setState({
+      displayWechatQrImage: display
+    })
+  },
+
   render: function () {
     return (
       <div>
@@ -85,6 +106,10 @@ let SocialBar = React.createClass({
              onClick={this.handleShareButtonClick}>
           分享到新浪微博
         </div>
+        <div onClick={this.handleWechatShareButtonClick}>
+          用微信打開
+        </div>
+        <image src={wechatQrImage} style={{display: this.state.displayWechatQrImage}} />
       </div>
     )
   }
