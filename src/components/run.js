@@ -8,4 +8,4 @@ ReactDOM.render(<App survey={survey} />, document.getElementById('app'))
 
 // DEBUG
 //import ResultPage from './ResultPage'
-//ReactDOM.render(<ResultPage score={-0.1} scoreNormalize={x => x} tracker={{}} />, document.getElementById('app'))
+//ReactDOM.render(<ResultPage score={-0.8} scoreNormalize={x => x} tracker={{}} />, document.getElementById('app'))

@@ -136,9 +136,8 @@ li::before {
 
 #graph {
   width: 90%;
+  display: block;
   margin: 0 auto;
-  max-width:500px;
-  position:absolute;
 }
 
 #result {
@@ -146,8 +145,16 @@ li::before {
 }
 
 #pointer {
-  width: 87px;
-  position: absolute;
+  position:absolute;
+  left:45%;
+  width:10%;
+  top: 50%;
+  /*max-width: 87px;*/
+}
+
+#spinner {
+  width:100%;
+  position: relative;
 }
 /*
 #checkbox {

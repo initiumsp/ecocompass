@@ -28,7 +28,7 @@ let Spinner = React.createClass({
 
     console.log(this.state.pointerStyle)
     return (
-      <div>
+      <div id="spinner">
         <image id='graph' src={graphImage}/>
         <image id='pointer'
                ref='pointer'
