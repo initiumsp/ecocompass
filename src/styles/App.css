@@ -23,3 +23,80 @@ body {
 li {
   list-style: none;
 }
+
+#leftUp, #up, #rightUp, #left, #middle, #right, #leftDown, #down, #rightDown {
+  display: inline-block;
+  margin:0;
+  padding:0;
+}
+
+
+#leftUp {
+  width: 70px;
+  height: 55px;
+  background-image: url("../images/left-up.png");
+  background-size: 70px ;
+}
+
+#up {
+  width: 810px;
+  height: 55px;
+  background-image: url("../images/up.png");
+  backgrounf-repeat: repeat-x;
+  background-size: auto 55px;
+}
+
+#rightUp {
+  width: 75px;
+  height: 55px;
+  background-image: url("../images/right-up.png");
+  background-size: 75px auto;
+}
+
+#left {
+  width: 70px;
+  height: 530px;
+  background-image: url("../images/left.png");
+  backgrounf-repeat: repeat-y;
+  background-size: 70px auto;
+}
+
+#middle {
+  width: 810px;
+  background-color: #147269;
+}
+
+#right {
+  width: 75px;
+  height: 530px;
+  background-image: url("../images/right.png");
+  backgrounf-repeat: repeat-y;
+  background-size: 75px auto;
+}
+
+#leftDown {
+  width: 70px;
+  height: 65px;
+  background-image: url("../images/left-down.png");
+  background-size: 70px;
+}
+
+#down {
+  width: 810px;
+  height: 65px;
+  background-image: url("../images/down.png");
+  background-size: auto 65px;
+}
+
+
+#rightDown {
+  width: 75px;
+  height: 65px;
+  background-image: url("../images/right-down.png");
+  background-size: 75px;
+}
+
+#wrapper {
+  margin: 0 auto;
+  width: 960px;
+}
