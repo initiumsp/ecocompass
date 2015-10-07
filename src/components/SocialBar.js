@@ -79,7 +79,7 @@ let SocialBar = React.createClass({
   },
 
   handleWechatShareButtonClick: function () {
-    var display;
+    var display
     if (this.state.displayWechatQrImage === 'none') {
       display = 'block'
     } else {
