@@ -5,6 +5,11 @@ import React from 'react'
 import app_meta from '../sources/meta_data'
 
 let wechatQrImage = require('../images/wechatQr.png')
+let wechat = require('../images/wechat.png')
+let weibo = require('../images/weibo.png')
+let FB = require('../images/FB.png')
+let twitter = require('../images/twitter.png')
+
 
 function getShareUrl (config) {
   var platform = config.platform
@@ -96,21 +101,21 @@ let SocialBar = React.createClass({
 
   render: function () {
     return (
-      <div>
+      <div id='socialBar'>
         <button data-platform='facebook'
              onClick={this.handleShareButtonClick}>
-          分享到Facebook
+          <image src={FB}/>
         </button>
         <button data-platform='twitter'
              onClick={this.handleShareButtonClick}>
-          分享到Twitter
+          <image src={twitter}/>
         </button>
         <button data-platform='sinaweibo'
              onClick={this.handleShareButtonClick}>
-          分享到新浪微博
+          <image src={weibo}/>
         </button>
         <button onClick={this.handleWechatShareButtonClick}>
-          用微信打開
+          <image src={wechat}/>
         </button>
         <image src={wechatQrImage} style={{display: this.state.displayWechatQrImage}} />
       </div>

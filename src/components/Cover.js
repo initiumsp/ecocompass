@@ -3,7 +3,7 @@ require('styles/App.css')
 
 import React from 'react'
 
-let coverImage = require('../images/cover.png')
+let initialgraphImage = require('../images/initialgraph.png')
 
 let Cover = ({coverClickHandler}) =>
   <div id='wrapper' onClick={coverClickHandler}>
@@ -15,6 +15,8 @@ let Cover = ({coverClickHandler}) =>
     <div className='row' id='second'>
       <div id='left'></div>
       <div id='middle'>
+        <image id='graph' src={initialgraphImage}/>
+        測測你是左派還是右派
       </div>
       <div id='right'></div>
     </div>

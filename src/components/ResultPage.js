@@ -27,10 +27,10 @@ let ResultPage = ({score, scoreNormalize, tracker}) => {
       <div id='left'></div>
       <div id='middle'>
         <div id='result'>Result: {score}</div>
-        <div>{commentText}</div>
-        <div>{final_notice}</div>
+        <div id='commentText'>{commentText}</div>
         <SocialBar tracker={tracker} />
         <Spinner index={scoreNormalize(score)} />
+        <div id='finalNotice'>{final_notice}</div>
       </div>
       <div id='right'></div>
     </div>

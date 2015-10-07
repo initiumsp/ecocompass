@@ -1,7 +1,8 @@
 /* Base Application Styles */
 body {
   color: #fff;
-  background: #222;
+  background: #AFAFAF;
+  font-family: Georgia, "Times New Roman", "KaiTi", "楷体", STKaiti, "华文楷体", serif;
 }
 
 .index img {
@@ -27,8 +28,10 @@ li:hover {
   cursor: pointer;
 }
 
-li::before {
-
+ul {
+  padding-left: 10px;
+  font-size: 1.2em;
+  line-height: 2em;
 }
 
 #leftUp, #up, #rightUp, #left, #middle, #right, #leftDown, #down, #rightDown {
@@ -135,7 +138,7 @@ li::before {
 }
 
 #graph {
-  width: 90%;
+  width: 100%;
   display: block;
   margin: 0 auto;
 }
@@ -146,10 +149,9 @@ li::before {
 
 #pointer {
   position:absolute;
-  left:45%;
-  width:10%;
+  left:44%;
+  width:12%;
   top: 50%;
-  /*max-width: 87px;*/
 }
 
 #spinner {
@@ -182,7 +184,7 @@ li::before {
   content: "○   "
 }
 
-#optiontext:hover::before{
+#optiontext:visited::before{
   content: "●   "
 }
 
@@ -190,3 +192,127 @@ li::before {
   transition: all 1s ease-in-out;
 }
 
+#socialBar {
+  position:absolute;
+  bottom:20px;
+}
+
+button {
+  margin: 0 10px 10px 0;
+  background-color:#82ad8d;
+  border:1px solid #e1e8e1;
+  cursor:pointer;
+  color:#ffffff;
+  padding:3px 6px;
+  text-decoration:none;
+}
+button:hover {
+  background-color:#c4cfbf;
+}
+button:active {
+  position:relative;
+  top:1px;
+}
+
+button img {
+  width: 30px
+}
+
+#commentText {
+  margin-top:20px;
+  font-size: 1em;
+}
+
+#finalNotice {
+  bottom:100px;
+  font-size: 0.8em;
+  position:absolute;
+  margin-right: 30px
+
+}
+
+
+@media (min-width: 600px) {
+  #pointer {
+    position:absolute;
+    left:44%;
+    width:12%;
+    top: 50%;
+    border: 0px
+  }
+
+  #spinner {
+    width:80%;
+    position: relative;
+  }
+}
+
+@media (max-width: 600px) {
+  #rightUp, #right, #rightDown {
+    width: 37px;
+  }
+
+  #left, #leftUp,#leftDown {
+    width: 35px;
+  }
+
+  #up, #leftUp, #rightUp {
+    height: 27px;
+  }
+
+  #down, #leftDown, #rightDown {
+    height: 32px;
+  }
+
+
+  #leftUp {
+    background-size: 35px ;
+  }
+
+  #up {
+    left: 35px;
+    right: 37px;
+    background-size: auto 27px;
+  }
+
+  #rightUp {
+    background-size: 37px auto;
+  }
+
+  #left {
+    width: 35px;
+    top: 27px;
+    bottom: 32px;
+    background-size: 35px auto;
+  }
+
+  #middle {
+    top: 27px;
+    bottom: 32px;
+    left: 35px;
+    right: 37px;
+    padding: 15px;
+  }
+
+  #right {
+    top: 27px;
+    bottom: 32px;
+    background-size: 37px auto;
+  }
+
+  #leftDown {
+    background-size: 35px;
+  }
+
+  #down {
+    left: 35px;
+    right: 37px;
+    background-size: auto 32px;
+  }
+
+
+  #rightDown {
+    background-image: url("../images/right-down.png");
+    background-size: 37px;
+  }
+}
