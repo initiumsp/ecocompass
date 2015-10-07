@@ -43,7 +43,6 @@ let AppComponent = React.createClass({
   },
 
   render: function () {
-
     if (this.state.stage === 'cover') {
       return <Cover coverClickHandler={this.startQuestion} />
     } else if (this.state.stage === 'qa') {
@@ -55,8 +54,5 @@ let AppComponent = React.createClass({
     }
   }
 })
-
-AppComponent.defaultProps = {
-}
 
 export default AppComponent
