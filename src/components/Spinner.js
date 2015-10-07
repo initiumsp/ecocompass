@@ -20,13 +20,12 @@ let Spinner = React.createClass({
   componentDidMount () {
     let rotateDegree = this.props.index * 90
     setTimeout(function () {
-      this.refs.pointer.style.transform = `rotate(${rotateDegree}deg`
+      this.refs.pointer.style.transform = `rotate(${rotateDegree}deg)`
     }.bind(this), 0)
   },
 
   render () {
 
-    console.log(this.state.pointerStyle)
     return (
       <div id="spinner">
         <image id='graph' src={graphImage}/>
