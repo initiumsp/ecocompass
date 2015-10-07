@@ -8,6 +8,10 @@ import ResultPage from './ResultPage'
 
 let AppComponent = React.createClass({
 
+  propTypes: {
+    survey: React.PropTypes.arrayOf(React.PropTypes.object)
+  },
+
   getInitialState: () => ({
     stage: 'cover',
     totalScore: 0,
@@ -15,7 +19,6 @@ let AppComponent = React.createClass({
   }),
 
   handleOptionClick: function (event) {
-
     let currentSerial = this.state.questionSerial
     let totalQuestionCount = this.props.survey.length
     let nextStage = 'qa'
