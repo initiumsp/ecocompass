@@ -78,7 +78,7 @@ let AppComponent = React.createClass({
       if (qa.optionType === 'multipleChoice') {
         return <ChoiceCard qa={qa}
                            optionClickHandler={this.handleOptionClick} />
-      } else {
+      } else if (qa.optionType === 'slider') {
         return <RangeCard text={qa.question}
                           min={qa.optionMin}
                           max={qa.optionMax}
