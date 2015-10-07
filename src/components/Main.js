@@ -86,7 +86,7 @@ let AppComponent = React.createClass({
                           nextQuestionButtonClickHandler={this.handleNextQuestButtonClick} />
       }
     } else {
-      return <ResultPage score={this.state.totalScore} />
+      return <ResultPage score={this.state.totalScore} tracker={this.tracker} />
     }
   }
 })

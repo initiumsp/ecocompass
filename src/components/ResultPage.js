@@ -4,8 +4,9 @@ require('styles/App.css')
 import React from 'react'
 import result_commments from '../sources/result_comments'
 import final_notice from '../sources/final_notice'
+import SocialBar from './SocialBar'
 
-let ResultPage = ({score}) => {
+let ResultPage = ({score, tracker}) => {
   let commentText
 
   for (let comment of result_commments) {
@@ -19,6 +20,7 @@ let ResultPage = ({score}) => {
       <div>Result: {score}</div>
       <div>{commentText}</div>
       <div>{final_notice}</div>
+      <SocialBar tracker = {tracker} />
     </div>
   )
 }
