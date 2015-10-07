@@ -6,11 +6,22 @@ import Cover from './Cover'
 import ChoiceCard from './ChoiceCard'
 import RangeCard from './RangeCard'
 import ResultPage from './ResultPage'
+import createTracker from './Tracker'
 
 let AppComponent = React.createClass({
 
+  tracker: createTracker('ecocompass'),
+
   propTypes: {
     survey: React.PropTypes.arrayOf(React.PropTypes.object)
+  },
+
+  componentWillMount: function () {
+    this.tracker.init()
+    this.tracker.post('render', '')
+    this.tracker.post('userAgent', window.navigator.userAgent)
+    this.tracker.post('url', window.location.href)
+    this.tracker.post('referrer', window.document.referrer)
   },
 
   getInitialState: () => ({
@@ -51,12 +62,18 @@ let AppComponent = React.createClass({
       let qa = this.props['survey'][serial]
       let type = qa.optionType
       if (type === 'multipleChoice') {
-        return <ChoiceCard qa={qa} optionClickHandler={this.handleOptionClick} />
+        return <ChoiceCard qa={qa}
+                           optionClickHandler={this.handleOptionClick}
+                           tracker={this.tracker} />
       } else {
-        return <RangeCard text={qa.question} min={qa.optionMin} max={qa.optionMax} />
+        return <RangeCard text={qa.question}
+                          min={qa.optionMin}
+                          max={qa.optionMax}
+                          tracker={this.tracker} />
       }
     } else {
-      return <ResultPage score={this.state.totalScore} />
+      return <ResultPage score={this.state.totalScore}
+                         tracker={this.tracker} />
     }
   }
 })
