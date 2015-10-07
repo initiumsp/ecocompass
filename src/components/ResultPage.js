@@ -28,6 +28,7 @@ let ResultPage = ({score, tracker}) => {
         <div>Result: {score}</div>
         <div>{commentText}</div>
         <div>{final_notice}</div>
+        <SocialBar tracker={tracker} />
       </div>
       <div id='right'></div>
     </div>

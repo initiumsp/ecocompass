@@ -11,17 +11,30 @@ function getShareUrl (config) {
   var description = config.description
   var imageUrl = config.imageUrl
 
-  targetUrl = encodeURIComponent(targetUrl)
-  imageUrl = encodeURIComponent(imageUrl)
+  targetUrl = targetUrl ? encodeURIComponent(targetUrl) : ''
+  imageUrl = imageUrl ? encodeURIComponent(imageUrl) : ''
+
+  var shareUrl
 
   if (platform === 'facebook') {
-    return 'https://www.facebook.com/dialog/feed?' +
+    shareUrl = 'https://www.facebook.com/dialog/feed?' +
       'app_id=' + appId +
       '&link=' + targetUrl +
-      '&redirect_uri=' + targetUrl +
-      '&picture=' + imageUrl +
-      '&name=' + title +
-      '&description=' + description
+      '&redirect_uri=' + targetUrl
+
+    if (imageUrl) {
+      shareUrl += '&picture=' + imageUrl
+    }
+
+    if (title) {
+      shareUrl += '&name=' + title
+    }
+
+    if (description) {
+      shareUrl += '&description=' + description
+    }
+
+    return shareUrl
   } else if (platform === 'sinaweibo') {
     return 'http://v.t.sina.com.cn/share/share.php?title=' + title + '&url=' + targetUrl
   } else if (platform === 'twitter') {
@@ -31,10 +44,35 @@ function getShareUrl (config) {
 
 let SocialBar = React.createClass({
 
+  propTypes: {
+    tracker: React.PropTypes.object
+  },
+
+  handleShareButtonClick: function (event) {
+    var chosenPlatform = event.target.dataset.platform
+    var shareUrl = getShareUrl({
+      platform: chosenPlatform,
+      targetUrl: window.location.origin
+    })
+    window.open(shareUrl)
+  },
 
   render: function () {
     return (
-      <div>Share</div>
+      <div>
+        <div data-platform='facebook'
+             onClick={this.handleShareButtonClick}>
+          分享到Facebook
+        </div>
+        <div data-platform='twitter'
+             onClick={this.handleShareButtonClick}>
+          分享到Twitter
+        </div>
+        <div data-platform='sinaweibo'
+             onClick={this.handleShareButtonClick}>
+          分享到新浪微博
+        </div>
+      </div>
     )
   }
 
