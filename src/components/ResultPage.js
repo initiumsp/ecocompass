@@ -5,11 +5,9 @@ import React from 'react'
 import result_comments from '../sources/result_comments'
 import final_notice from '../sources/final_notice'
 import SocialBar from './SocialBar'
+import Spinner from './Spinner'
 
-let graphImage = require('../images/graph.png')
-let pointerImage = require('../images/pointer.png')
-
-let ResultPage = ({score, tracker}) => {
+let ResultPage = ({score, scoreNormalize, tracker}) => {
   let commentText
 
   for (let comment of result_comments) {
@@ -31,12 +29,8 @@ let ResultPage = ({score, tracker}) => {
         <div id='result'>Result: {score}</div>
         <div>{commentText}</div>
         <div>{final_notice}</div>
-        <div>
-          <image id='graph' src={graphImage}/>
-          <image id='pointer' src={pointerImage}/>
-        </div>
         <SocialBar tracker={tracker} />
-
+        <Spinner index={scoreNormalize(score)} />
       </div>
       <div id='right'></div>
     </div>

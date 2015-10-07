@@ -179,32 +179,7 @@ li::before {
   content: "●   "
 }
 
-.rotate-clockwise {
-  animation-name: pointer-rotate-clockwise;
-  animation-duration: 1000ms;
+.rotate {
+  transition: all 1s ease-in-out;
 }
 
-@keyframes pointer-rotate-clockwise  {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(90deg);
-  }
-
-}
-
-.rotate-counterclockwise {
-  animation-name: pointer-rotate-counterclockwise;
-  animation-duration: 1000ms;
-}
-
-@keyframes pointer-rotate-counterclockwise  {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-90deg);
-  }
-
-}

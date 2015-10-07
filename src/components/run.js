@@ -5,3 +5,7 @@ import survey from './../sources/survey_data'
 
 // Render the main component into the dom
 ReactDOM.render(<App survey={survey} />, document.getElementById('app'))
+
+// DEBUG
+//import ResultPage from './ResultPage'
+//ReactDOM.render(<ResultPage score={-0.1} scoreNormalize={x => x} tracker={{}} />, document.getElementById('app'))
