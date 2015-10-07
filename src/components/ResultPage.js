@@ -2,14 +2,14 @@ require('normalize.css')
 require('styles/App.css')
 
 import React from 'react'
-import result_commments from '../sources/result_comments'
+import result_comments from '../sources/result_comments'
 import final_notice from '../sources/final_notice'
 import SocialBar from './SocialBar'
 
 let ResultPage = ({score, tracker}) => {
   let commentText
 
-  for (let comment of result_commments) {
+  for (let comment of result_comments) {
     if ((score >= comment.minScore) && (score <= comment.maxScore)) {
       commentText = comment.commentText
     }
