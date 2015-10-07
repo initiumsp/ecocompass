@@ -7,6 +7,7 @@ import ChoiceCard from './ChoiceCard'
 import RangeCard from './RangeCard'
 import ResultPage from './ResultPage'
 import createTracker from './Tracker'
+import app_meta from '../sources/meta_data'
 
 let AppComponent = React.createClass({
 
@@ -86,7 +87,9 @@ let AppComponent = React.createClass({
                           nextQuestionButtonClickHandler={this.handleNextQuestButtonClick} />
       }
     } else {
-      return <ResultPage score={this.state.totalScore} tracker={this.tracker} />
+      return <ResultPage score={this.state.totalScore}
+                         scoreNormalize={(score) => score / app_meta.maxTotalScore}
+                         tracker={this.tracker} />
     }
   }
 })
