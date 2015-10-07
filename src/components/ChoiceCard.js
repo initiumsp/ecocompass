@@ -1,7 +1,7 @@
 require('normalize.css')
 require('styles/App.css')
 
-import React from 'react/addons'
+import React from 'react'
 import QuestionText from './QuestionText'
 import OptionList from './OptionList'
 
@@ -16,7 +16,7 @@ let leftDownImage = require('../images/left-down.png')
 let rightDownImage = require('../images/right-down.png')
 
 
-let QACard = ({qa, optionClickHandler}) =>
+let ChoiceCard = ({qa, optionClickHandler}) =>
   <div id="wrapper">
     <div class="row">
       <div id="leftUp"></div>
@@ -38,4 +38,4 @@ let QACard = ({qa, optionClickHandler}) =>
     </div>
   </div>
 
-export default QACard
+export default ChoiceCard

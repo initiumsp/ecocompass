@@ -1,7 +1,7 @@
 require('normalize.css')
 require('styles/App.css')
 
-import React from 'react/addons'
+import React from 'react'
 
 let QuestionText = ({text}) => <h1>{text}</h1>
 
