@@ -51,8 +51,19 @@ let SocialBar = React.createClass({
 
   handleShareButtonClick: function (event) {
     var chosenPlatform = event.target.dataset.platform
+    var shareTitle
+
+    if (chosenPlatform === 'facebook') {
+      shareTitle = app_meta.facebookShareTitle
+    } else if (chosenPlatform === 'sinaweibo') {
+      shareTitle = app_meta.sinaweiboShareTitle
+    } else if (chosenPlatform === 'twitter') {
+      shareTitle = app_meta.twitterShareTitle
+    }
+
     var shareUrl = getShareUrl({
       facebookAppId: app_meta.facebookAppId,
+      title: shareTitle,
       platform: chosenPlatform,
       targetUrl: window.location.origin
     })
