@@ -31,9 +31,6 @@ function getShareUrl (config) {
 
 let SocialBar = React.createClass({
 
-  propTypes: {
-    tracker: React.propTypes.tracker
-  },
 
   render: function () {
     return (

@@ -16,12 +16,27 @@ body {
   padding: 15px 0;
   text-align: center;
   border: 1px solid #000;
-  border-width: 1px 0;
   background: #666;
 }
 
 li {
   list-style: none;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+li::before {
+
+}
+
+#first {
+  height: 55px;
+}
+
+#second {
+  height: 530px;
 }
 
 #leftUp, #up, #rightUp, #left, #middle, #right, #leftDown, #down, #rightDown {
@@ -57,12 +72,14 @@ li {
   width: 70px;
   height: 530px;
   background-image: url("../images/left.png");
-  backgrounf-repeat: repeat-y;
+  background-repeat: repeat-y;
   background-size: 70px auto;
 }
 
 #middle {
   width: 810px;
+  height: 530px;
+  vertical-align: top;
   background-color: #147269;
 }
 
@@ -70,7 +87,7 @@ li {
   width: 75px;
   height: 530px;
   background-image: url("../images/right.png");
-  backgrounf-repeat: repeat-y;
+  background-repeat: repeat-y;
   background-size: 75px auto;
 }
 

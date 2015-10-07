@@ -16,12 +16,27 @@ let ResultPage = ({score, tracker}) => {
   }
 
   return (
-    <div>
-      <div>Result: {score}</div>
-      <div>{commentText}</div>
-      <div>{final_notice}</div>
-      <SocialBar tracker = {tracker} />
+  <div id='wrapper'>
+    <div className='row' id='first'>
+      <div id='leftUp'></div>
+      <div id='up'></div>
+      <div id='rightUp'></div>
     </div>
+    <div className='row' id='second'>
+      <div id='left'></div>
+      <div id='middle'>
+        <div>Result: {score}</div>
+        <div>{commentText}</div>
+        <div>{final_notice}</div>
+      </div>
+      <div id='right'></div>
+    </div>
+    <div className='row' id='third'>
+      <div id='leftDown'></div>
+      <div id='down'></div>
+      <div id='rightDown'></div>
+    </div>
+  </div>
   )
 }
 
