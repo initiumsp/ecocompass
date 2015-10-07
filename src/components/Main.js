@@ -1,7 +1,7 @@
 require('normalize.css')
 require('styles/App.css')
 
-import React from 'react/addons'
+import React from 'react'
 import Cover from './Cover'
 import QACard from './QACard'
 import ResultPage from './ResultPage'

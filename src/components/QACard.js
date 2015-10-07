@@ -1,7 +1,7 @@
 require('normalize.css')
 require('styles/App.css')
 
-import React from 'react/addons'
+import React from 'react'
 import QuestionText from './QuestionText'
 import OptionList from './OptionList'
 
