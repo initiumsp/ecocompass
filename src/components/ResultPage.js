@@ -6,6 +6,9 @@ import result_comments from '../sources/result_comments'
 import final_notice from '../sources/final_notice'
 import SocialBar from './SocialBar'
 
+let graphImage = require('../images/graph.png')
+let pointerImage = require('../images/pointer.png')
+
 let ResultPage = ({score, tracker}) => {
   let commentText
 
@@ -25,10 +28,15 @@ let ResultPage = ({score, tracker}) => {
     <div className='row' id='second'>
       <div id='left'></div>
       <div id='middle'>
-        <div>Result: {score}</div>
+        <div id='result'>Result: {score}</div>
         <div>{commentText}</div>
         <div>{final_notice}</div>
+        <div>
+          <image id='graph' src={graphImage}/>
+          <image id='pointer' src={pointerImage}/>
+        </div>
         <SocialBar tracker={tracker} />
+
       </div>
       <div id='right'></div>
     </div>

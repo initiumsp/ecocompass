@@ -94,21 +94,21 @@ let SocialBar = React.createClass({
   render: function () {
     return (
       <div>
-        <div data-platform='facebook'
+        <button data-platform='facebook'
              onClick={this.handleShareButtonClick}>
           分享到Facebook
-        </div>
-        <div data-platform='twitter'
+        </button>
+        <button data-platform='twitter'
              onClick={this.handleShareButtonClick}>
           分享到Twitter
-        </div>
-        <div data-platform='sinaweibo'
+        </button>
+        <button data-platform='sinaweibo'
              onClick={this.handleShareButtonClick}>
           分享到新浪微博
-        </div>
-        <div onClick={this.handleWechatShareButtonClick}>
+        </button>
+        <button onClick={this.handleWechatShareButtonClick}>
           用微信打開
-        </div>
+        </button>
         <image src={wechatQrImage} style={{display: this.state.displayWechatQrImage}} />
       </div>
     )
