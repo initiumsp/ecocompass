@@ -2,10 +2,11 @@ require('normalize.css')
 require('styles/App.css')
 
 import React from 'react'
+import app_meta from '../sources/meta_data'
 
 function getShareUrl (config) {
   var platform = config.platform
-  var appId = config.appId
+  var facebookAppId = config.facebookAppId
   var targetUrl = config.targetUrl
   var title = config.title
   var description = config.description
@@ -18,7 +19,7 @@ function getShareUrl (config) {
 
   if (platform === 'facebook') {
     shareUrl = 'https://www.facebook.com/dialog/feed?' +
-      'app_id=' + appId +
+      'app_id=' + facebookAppId +
       '&link=' + targetUrl +
       '&redirect_uri=' + targetUrl
 
@@ -51,6 +52,7 @@ let SocialBar = React.createClass({
   handleShareButtonClick: function (event) {
     var chosenPlatform = event.target.dataset.platform
     var shareUrl = getShareUrl({
+      facebookAppId: app_meta.facebookAppId,
       platform: chosenPlatform,
       targetUrl: window.location.origin
     })
