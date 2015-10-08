@@ -15,8 +15,9 @@ let Cover = ({coverClickHandler}) =>
     <div className='row' id='second'>
       <div id='left'></div>
       <div id='middle'>
-        <image id='graph' src={initialgraphImage}/>
-        測測你是左派還是右派
+        <image id='graphInitial' src={initialgraphImage}/>
+        <div id='coverText'>測測你是左派還是右派</div>
+        <div id='start'>開始</div>
       </div>
       <div id='right'></div>
     </div>

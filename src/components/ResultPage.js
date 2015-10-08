@@ -18,27 +18,21 @@ let ResultPage = ({score, scoreNormalize, tracker}) => {
 
   return (
   <div id='wrapper'>
-    <div className='row' id='first'>
       <div id='leftUp'></div>
       <div id='up'></div>
       <div id='rightUp'></div>
-    </div>
-    <div className='row' id='second'>
       <div id='left'></div>
       <div id='middle'>
         <div id='result'>Result: {score}</div>
+        <Spinner index={scoreNormalize(score)} />
         <div id='commentText'>{commentText}</div>
         <SocialBar tracker={tracker} />
-        <Spinner index={scoreNormalize(score)} />
-        <div id='finalNotice'>{final_notice}</div>
       </div>
       <div id='right'></div>
-    </div>
-    <div className='row' id='third'>
       <div id='leftDown'></div>
       <div id='down'></div>
       <div id='rightDown'></div>
-    </div>
+    <div id='finalNotice'>{final_notice}</div>
   </div>
   )
 }

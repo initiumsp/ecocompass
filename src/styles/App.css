@@ -138,6 +138,18 @@ ul {
   max-height: 640px;
 }
 
+#graphInitial {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+#coverText {
+  position: relative;
+  text-align: center;
+  margin-top: 30px
+}
+
 #graph {
   width: 100%;
   display: block;
@@ -145,7 +157,7 @@ ul {
 }
 
 #result {
-  font-size: 40px;
+  font-size: 10px;
 }
 
 #pointer {
@@ -174,6 +186,19 @@ ul {
 }
 */
 
+#code {
+  position: relative;
+  padding: 10px;
+  float: right;
+  background-color: #C8916E;
+  border: 3px solid #7F604D;
+}
+
+#code img{
+  z-index: 100;
+  width: 100px;
+}
+
 #optiontext {
   display: inline-block;
   height: 20px;
@@ -185,7 +210,11 @@ ul {
   content: "○   "
 }
 
-#optiontext:visited::before{
+#optiontext:active::before{
+  content: "●   "
+}
+
+#optiontext:focus::before{
   content: "●   "
 }
 
@@ -194,9 +223,11 @@ ul {
 }
 
 #socialBar {
-  position:absolute;
-  bottom:20px;
+  position:relative;
+  margin-top: 20px;
+  margin: 0px 10px 0px 10px;
   z-index: 1;
+  text-align: right;
 }
 
 button {
@@ -208,9 +239,11 @@ button {
   padding:3px 6px;
   text-decoration:none;
 }
+
 button:hover {
   background-color:#c4cfbf;
 }
+
 button:active {
   position:relative;
   top:1px;
@@ -221,8 +254,12 @@ button img {
 }
 
 #commentText {
-  margin-top:20px;
+  position: relative;
   font-size: 1em;
+  margin: 20px 10px 20px 10px;
+  padding: 5px;
+  background: #1F8478;
+  border: 1px dotted white;
 }
 
 #slider {
@@ -234,14 +271,34 @@ button img {
 }
 
 #finalNotice {
-  bottom:100px;
   font-size: 0.8em;
-  position:absolute;
-  margin-right: 30px
+  position: absolute;
+  top: 100%;
+  left: 35px;
+  right: 37px;
+  padding: 15px;
+  color: black;
 }
 
 button#next {
   margin-top: 50px
+}
+
+#coverTect {
+  margin: 0 auto
+}
+
+#start {
+  width: 50%;
+  margin: 50px auto !important;
+  text-align: center;
+  background-color: #14A392;
+  padding: 5px;
+  border: 2px solid #BAE0DB;
+}
+
+#start:focus, #start:active {
+  background-color: #012D27;
 }
 
 @media (min-width: 600px) {
@@ -254,12 +311,27 @@ button#next {
   }
 
   #spinner {
-    width:80%;
+    width: 70%;
+    left: 15%;
+    right: 15%;
     position: relative;
+  }
+
+  #graphInitial {
+    width: 70%;
+    left: 15%;
+    right: 15%
+  }
+
+  #graphInitial {
+    width: 70%;
+    left: 15%;
+    right: 15%
   }
 }
 
 @media (max-width: 600px) {
+
   #rightUp, #right, #rightDown {
     width: 37px;
   }
@@ -285,6 +357,8 @@ button#next {
     left: 35px;
     right: 37px;
     background-size: auto 27px;
+    z-index: 0;
+    background-color: #AFAFAF;
   }
 
   #rightUp {
@@ -320,11 +394,17 @@ button#next {
     left: 35px;
     right: 37px;
     background-size: auto 32px;
+    z-index: 0;
+    background-color: #AFAFAF;
   }
 
 
   #rightDown {
     background-image: url("../images/right-down.png");
     background-size: 37px;
+  }
+
+  button img {
+    width: 25px
   }
 }

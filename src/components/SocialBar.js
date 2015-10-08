@@ -119,7 +119,7 @@ let SocialBar = React.createClass({
         <button onClick={this.handleWechatShareButtonClick}>
           <image src={wechatIcon}/>
         </button>
-        <image src={wechatQrImage} style={{display: this.state.displayWechatQrImage}} />
+        <div id='code' style={{display: this.state.displayWechatQrImage}}><image src={wechatQrImage} /></div>
       </div>
     )
   }
