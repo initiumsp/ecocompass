@@ -40,7 +40,7 @@ let AppComponent = React.createClass({
       nextStage = 'result'
     }
 
-    let optionScore = event.target.dataset.score
+    let optionScore = event.target.getAttribute('data-score')
 
     let optionChosen = event.target.textContent
     if (typeof optionChosen === 'undefined') {
