@@ -23,6 +23,7 @@ body {
 
 li {
   list-style: none;
+  width: 8em;
 }
 
 li:hover {
