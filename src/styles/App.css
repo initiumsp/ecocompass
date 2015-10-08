@@ -196,6 +196,7 @@ ul {
 #socialBar {
   position:absolute;
   bottom:20px;
+  z-index: 1;
 }
 
 button {
