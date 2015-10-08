@@ -50,7 +50,7 @@ let AppComponent = React.createClass({
     this.tracker.post('question_' + this.props.survey[currentSerial].question, 'option_' + optionChosen)
 
     this.setState({
-      questionSerial: this.state.questionSerial + 1,
+      questionSerial this.state.questionSerial + 1,
       totalScore: this.state.totalScore + Number(optionScore),
       stage: nextStage
     })
