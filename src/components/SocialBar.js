@@ -102,16 +102,19 @@ let SocialBar = React.createClass({
     return (
       <div id='socialBar'>
         <button data-platform='facebook'
-             onClick={this.handleShareButtonClick}>
-          <image src={facebookIcon}/>
+                onClick={this.handleShareButtonClick}>
+          <image src={facebookIcon}
+                 data-platform='facebook' />
         </button>
         <button data-platform='twitter'
-             onClick={this.handleShareButtonClick}>
-          <image src={twitterIcon}/>
+                onClick={this.handleShareButtonClick}>
+          <image src={twitterIcon}
+                 data-platform='twitter' />
         </button>
         <button data-platform='sinaweibo'
-             onClick={this.handleShareButtonClick}>
-          <image src={weiboIcon}/>
+                onClick={this.handleShareButtonClick}>
+          <image src={weiboIcon}
+                 data-platform='sinaweibo' />
         </button>
         <button onClick={this.handleWechatShareButtonClick}>
           <image src={wechatIcon}/>
