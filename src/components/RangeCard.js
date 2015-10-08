@@ -46,14 +46,15 @@ let RangeCard = React.createClass({
       <div className='row' id='second'>
         <div id='left'></div>
         <div id='middle'>
-          <div>{text}</div>
-          <div>{this.state.currentValue}</div>
+          <h3>{text}</h3>
+          <div id='age'>{this.state.currentValue}</div>
           <span>{min}</span>
-          <input type='range'
+          <input id='slider'
+                 type='range'
                  min={min} max={max} value={this.state.currentValue}
                  onChange={this.rangeSlideLocalHandler} />
           <span>{max}</span>
-          <button onClick={nextQuestionButtonClickHandler}>Next</button>
+          <button id='next' onClick={nextQuestionButtonClickHandler}>Next</button>
         </div>
         <div id='right'></div>
       </div>
