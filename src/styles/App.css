@@ -138,6 +138,18 @@ ul {
   max-height: 640px;
 }
 
+#graphInitial {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+#coverText {
+  position: relative;
+  text-align: center;
+  margin-top: 30px
+}
+
 #graph {
   width: 100%;
   display: block;
@@ -174,6 +186,19 @@ ul {
 }
 */
 
+#code {
+  position: relative;
+  padding: 10px;
+  float: right;
+  background-color: #C8916E;
+  border: 3px solid #7F604D;
+}
+
+#code img{
+  z-index: 100;
+  width: 100px;
+}
+
 #optiontext {
   display: inline-block;
   height: 20px;
@@ -185,7 +210,11 @@ ul {
   content: "○   "
 }
 
-#optiontext:visited::before{
+#optiontext:active::before{
+  content: "●   "
+}
+
+#optiontext:focus::before{
   content: "●   "
 }
 
@@ -198,6 +227,7 @@ ul {
   margin-top: 20px;
   margin: 0px 10px 0px 10px;
   z-index: 1;
+  text-align: right;
 }
 
 button {
@@ -254,6 +284,23 @@ button#next {
   margin-top: 50px
 }
 
+#coverTect {
+  margin: 0 auto
+}
+
+#start {
+  width: 50%;
+  margin: 50px auto !important;
+  text-align: center;
+  background-color: #14A392;
+  padding: 5px;
+  border: 2px solid #BAE0DB;
+}
+
+#start:focus, #start:active {
+  background-color: #012D27;
+}
+
 @media (min-width: 600px) {
   #pointer {
     position:absolute;
@@ -266,6 +313,12 @@ button#next {
   #spinner {
     width:80%;
     position: relative;
+  }
+
+  #graphInitial {
+    width: 70%;
+    left: 15%;
+    right: 15%
   }
 }
 
@@ -296,7 +349,7 @@ button#next {
     left: 35px;
     right: 37px;
     background-size: auto 27px;
-    z-index: 100;
+    z-index: 0;
     background-color: #AFAFAF;
   }
 
@@ -333,7 +386,7 @@ button#next {
     left: 35px;
     right: 37px;
     background-size: auto 32px;
-    z-index: 100;
+    z-index: 0;
     background-color: #AFAFAF;
   }
 
