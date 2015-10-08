@@ -11,16 +11,11 @@ let Spinner = React.createClass({
     index: React.PropTypes.number
   },
 
-  getInitialState () {
-    return {pointerStyle: {
-      transform: 'rotate: 0deg'
-    }}
-  },
-
   componentDidMount () {
     let rotateDegree = this.props.index * 90
     setTimeout(function () {
       this.refs.pointer.style.transform = `rotate(${rotateDegree}deg)`
+      this.refs.pointer.style.webkitTransform = `rotate(${rotateDegree}deg)`
     }.bind(this), 0)
   },
 
@@ -32,8 +27,7 @@ let Spinner = React.createClass({
         <image id='pointer'
                ref='pointer'
                src={pointerImage}
-               className='rotate'
-               style={this.state.pointerStyle}/>
+               className='rotate' />
       </div>
     )
   }
