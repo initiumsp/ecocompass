@@ -40,9 +40,14 @@ let AppComponent = React.createClass({
       nextStage = 'result'
     }
 
-    let optionScore = event.target.dataset.score
+    let optionScore = event.target.getAttribute('data-score')
 
-    this.tracker.post('question_' + this.props.survey[currentSerial].question, 'option_' + event.target.textContent)
+    let optionChosen = event.target.textContent
+    if (typeof optionChosen === 'undefined') {
+      optionChosen = event.target.innerHTML
+    }
+
+    this.tracker.post('question_' + this.props.survey[currentSerial].question, 'option_' + optionChosen)
 
     this.setState({
       questionSerial: this.state.questionSerial + 1,
@@ -65,6 +70,7 @@ let AppComponent = React.createClass({
   },
 
   startQASection: function () {
+    this.tracker.post('QA_section_started', '')
     this.setState({
       stage: 'qa'
     })

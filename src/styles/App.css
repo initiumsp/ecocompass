@@ -197,6 +197,7 @@ ul {
   position:relative;
   margin-top: 20px;
   margin: 0px 10px 0px 10px;
+  z-index: 1;
 }
 
 button {
