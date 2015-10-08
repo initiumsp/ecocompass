@@ -5,11 +5,10 @@ import React from 'react'
 import app_meta from '../sources/meta_data'
 
 let wechatQrImage = require('../images/wechatQr.png')
-let wechat = require('../images/wechat.png')
-let weibo = require('../images/weibo.png')
-let FB = require('../images/FB.png')
-let twitter = require('../images/twitter.png')
-
+let wechatIcon = require('../images/wechat.png')
+let weiboIcon = require('../images/weibo.png')
+let facebookIcon = require('../images/FB.png')
+let twitterIcon = require('../images/twitter.png')
 
 function getShareUrl (config) {
   var platform = config.platform
@@ -104,18 +103,18 @@ let SocialBar = React.createClass({
       <div id='socialBar'>
         <button data-platform='facebook'
              onClick={this.handleShareButtonClick}>
-          <image src={FB}/>
+          <image src={facebookIcon}/>
         </button>
         <button data-platform='twitter'
              onClick={this.handleShareButtonClick}>
-          <image src={twitter}/>
+          <image src={twitterIcon}/>
         </button>
         <button data-platform='sinaweibo'
              onClick={this.handleShareButtonClick}>
-          <image src={weibo}/>
+          <image src={weiboIcon}/>
         </button>
         <button onClick={this.handleWechatShareButtonClick}>
-          <image src={wechat}/>
+          <image src={wechatIcon}/>
         </button>
         <image src={wechatQrImage} style={{display: this.state.displayWechatQrImage}} />
       </div>
