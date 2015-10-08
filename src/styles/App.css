@@ -311,8 +311,16 @@ button#next {
   }
 
   #spinner {
-    width:80%;
+    width: 70%;
+    left: 15%;
+    right: 15%;
     position: relative;
+  }
+
+  #graphInitial {
+    width: 70%;
+    left: 15%;
+    right: 15%
   }
 
   #graphInitial {
