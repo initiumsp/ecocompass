@@ -24,6 +24,12 @@ body {
 li {
   list-style: none;
   width: 8em;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 li:hover {
@@ -296,6 +302,7 @@ button#next {
   background-color: #14A392;
   padding: 5px;
   border: 2px solid #BAE0DB;
+  cursor: pointer;
 }
 
 #start:focus, #start:active {
