@@ -77,7 +77,7 @@ let SocialBar = React.createClass({
       facebookAppId: app_meta.facebookAppId,
       title: shareTitle,
       platform: chosenPlatform,
-      targetUrl: window.location.origin
+      targetUrl: window.location.href
     })
     this.props.tracker.post('share_button_click', chosenPlatform)
     window.open(shareUrl)
