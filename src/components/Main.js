@@ -84,11 +84,15 @@ let AppComponent = React.createClass({
       let qa = this.props['survey'][serial]
       if (qa.optionType === 'multipleChoice') {
         return <ChoiceCard qa={qa}
-                           optionClickHandler={this.handleOptionClick} />
+                           optionClickHandler={this.handleOptionClick}
+                           questionSerial={this.state.questionSerial}
+                           questionTotalCount={this.props.survey.length} />
       } else if (qa.optionType === 'slider') {
         return <RangeCard text={qa.question}
                           min={qa.optionMin}
                           max={qa.optionMax}
+                          questionSerial={this.state.questionSerial}
+                          questionTotalCount={this.props.survey.length}
                           rangeSlideHandler={this.handleRangeSlide}
                           nextQuestionButtonClickHandler={this.handleNextQuestButtonClick} />
       }

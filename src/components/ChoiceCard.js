@@ -5,14 +5,16 @@ import React from 'react'
 import QuestionText from './QuestionText'
 import OptionList from './OptionList'
 
-let ChoiceCard = ({qa, optionClickHandler}) =>
+let ChoiceCard = ({qa, optionClickHandler, questionSerial, questionTotalCount}) =>
   <div id='wrapper'>
       <div id='leftUp'></div>
       <div id='up'></div>
       <div id='rightUp'></div>
       <div id='left'></div>
       <div id='middle'>
-        <QuestionText text={qa.question} />
+        <QuestionText text={qa.question}
+                      questionSerial={questionSerial}
+                      questionTotalCount={questionTotalCount}/>
         <OptionList options={qa.options} optionClickHandler={optionClickHandler} />
       </div>
       <div id='right'></div>

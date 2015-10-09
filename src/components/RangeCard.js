@@ -9,6 +9,8 @@ let RangeCard = React.createClass({
     min: React.PropTypes.number,
     max: React.PropTypes.number,
     text: React.PropTypes.string,
+    questionSerial: React.PropTypes.number,
+    questionTotalCount: React.PropTypes.number,
     currentValue: React.PropTypes.number,
     rangeSlideHandler: React.PropTypes.func,
     nextQuestionButtonClickHandler: React.PropTypes.func
@@ -34,7 +36,7 @@ let RangeCard = React.createClass({
   },
 
   render: function () {
-    let {min, max, text, nextQuestionButtonClickHandler} = this.props
+    let {min, max, text, questionSerial, questionTotalCount, nextQuestionButtonClickHandler} = this.props
 
     return (
     <div id='wrapper'>
@@ -46,7 +48,7 @@ let RangeCard = React.createClass({
       <div className='row' id='second'>
         <div id='left'></div>
         <div id='middle'>
-          <h3>{text}</h3>
+          <h3>{(questionSerial + 1) + '/' + questionTotalCount} {text}</h3>
           <div id='currentValue'>{this.state.currentValue}</div>
           <span>{min}</span>
           <input id='slider'
