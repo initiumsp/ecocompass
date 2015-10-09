@@ -28,7 +28,7 @@ let Spinner = React.createClass({
       this.refs.pointer.style.transform = transformSetting
       this.refs.pointer.style.webkitTransform = transformSetting
       this.refs.pointer.style.mozTransform = transformSetting
-    }.bind(this), 0)
+    }.bind(this), 200)
   },
 
   render () {
