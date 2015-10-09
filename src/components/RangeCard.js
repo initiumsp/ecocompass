@@ -47,14 +47,14 @@ let RangeCard = React.createClass({
         <div id='left'></div>
         <div id='middle'>
           <h3>{text}</h3>
-          <div id='age'>{this.state.currentValue}</div>
+          <div id='currentValue'>{this.state.currentValue}</div>
           <span>{min}</span>
           <input id='slider'
                  type='range'
                  min={min} max={max} value={this.state.currentValue}
                  onChange={this.rangeSlideLocalHandler} />
           <span>{max}</span>
-          <button id='next' onClick={nextQuestionButtonClickHandler}>Next</button>
+          <button id='next' onClick={nextQuestionButtonClickHandler}>下一題</button>
         </div>
         <div id='right'></div>
       </div>
@@ -64,8 +64,6 @@ let RangeCard = React.createClass({
         <div id='rightDown'></div>
       </div>
     </div>
-
-
     )
   }
 })

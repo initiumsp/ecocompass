@@ -267,8 +267,14 @@ button img {
   width: 80%
 }
 
-#age {
-  text-align: center
+#currentValue {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+button#next {
+  margin-top: 50px;
+  margin-left: 1em;
 }
 
 #finalNotice {
@@ -279,10 +285,6 @@ button img {
   right: 37px;
   padding: 15px;
   color: black;
-}
-
-button#next {
-  margin-top: 50px
 }
 
 #coverTect {
