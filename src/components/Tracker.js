@@ -40,7 +40,7 @@ let createInitiumLabTracker = (targetLabel) => ({
     }
 
     request.open('POST', url, true)
-    request.setRequestHeader('Content-Type', 'application/json charset=UTF-8')
+    request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')
     let jsonString = JSON.stringify(message)
     request.send(jsonString)
     console.log('Posting ' + jsonString)
