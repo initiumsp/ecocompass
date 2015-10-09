@@ -36,6 +36,12 @@ let AppComponent = React.createClass({
     questionSerial: 0
   }),
 
+  /**
+   * The global handler for option clicks
+   * - increment currentSerial in state to move to the next question
+   * - adds the score of the option to the totalScore counter
+   * @param event - clickEvent
+   */
   handleOptionClick (event) {
     let currentSerial = this.state.questionSerial
     let totalQuestionCount = this.props.survey.length
@@ -61,11 +67,20 @@ let AppComponent = React.createClass({
     })
   },
 
+  /**
+   * The global handler of range sliders
+   * - post the value to backend
+   * @param event - the onChange event
+   */
   handleRangeSlide (event) {
     let currentSerial = this.state.questionSerial
     this.tracker.post('question_' + this.props.survey[currentSerial].question, 'value_' + event.target.value)
   },
 
+  /**
+   * The handler for "click" event in the RangeCard page
+   * - move to next question
+   */
   handleNextQuestButtonClick () {
     this.tracker.post('next_button_clicked', '')
     this.setState({
@@ -74,6 +89,9 @@ let AppComponent = React.createClass({
     })
   },
 
+  /**
+   * Starts the QA section.
+   */
   startQASection () {
     this.tracker.post('QA_section_started', '')
     this.setState({
@@ -81,6 +99,15 @@ let AppComponent = React.createClass({
     })
   },
 
+  /**
+   * Renders the main app component
+   * it first checks the stage:
+   * - if the app is at cover stage it renders Cover;
+   * - if the app is at qa stage, it further checks the type of the next qa,
+   *   and renders the next card accordingly
+   * - if the app is at result stage, it renders ResultPage
+   * @returns {XML}
+   */
   render () {
     if (this.state.stage === 'cover') {
       return <Cover coverClickHandler={this.startQASection} />
