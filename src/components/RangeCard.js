@@ -22,7 +22,7 @@ let RangeCard = React.createClass({
 
   getDefaultProps () {
     return {
-      currentValue: 50
+      currentValue: 25
     }
   },
 
