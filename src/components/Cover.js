@@ -1,3 +1,7 @@
+/**
+ * Cover page of the quiz
+ */
+
 require('normalize.css')
 require('styles/App.css')
 
@@ -5,6 +9,11 @@ import React from 'react'
 
 let initialgraphImage = require('../images/initialgraph.png')
 
+/**
+ * The cover page component
+ * @param coverClickHandler - callback for clicking; usually used to switch to the next page
+ * @constructor
+ */
 let Cover = ({coverClickHandler}) =>
   <div id='wrapper' onClick={coverClickHandler}>
     <div className='row' id='first'>

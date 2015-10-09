@@ -1,6 +1,19 @@
-let createInitiumLabTracker = (targetLabel) => ({
-  target: targetLabel,
+/**
+ * A tracker for customized event tracking
+ */
 
+/**
+ * creates a tracker customized for Initium Lab backend
+ * @param appLabel - the identifier of the app, to be sent to backend
+ */
+let createInitiumLabTracker = (appLabel) => ({
+  target: appLabel,
+
+  /**
+   *  Init() tries to fetch the UUID from localStorage, if none is found,
+   *  it generates a UUID for user identification, so that
+   *  if a user play the quiz twice, we'll know.
+   */
   init () {
     let localStorage = window.localStorage
 
@@ -25,6 +38,12 @@ let createInitiumLabTracker = (targetLabel) => ({
       this.uuid = localStorage.uuid
     }
   },
+
+  /**
+   * Post message, organized in key-value pairs to the backend
+   * @param {string} keyInput  - the key of the message
+   * @param {string} valueInput - the value of the message
+   */
 
   post (keyInput, valueInput) {
     let XMLHttpRequest = window.XMLHttpRequest

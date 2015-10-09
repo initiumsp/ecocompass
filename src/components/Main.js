@@ -1,3 +1,8 @@
+/**
+ * Main component of the quiz.
+ * This component is stateful.
+ */
+
 require('normalize.css')
 require('styles/App.css')
 
@@ -17,7 +22,7 @@ let AppComponent = React.createClass({
     survey: React.PropTypes.arrayOf(React.PropTypes.object)
   },
 
-  componentWillMount: function () {
+  componentWillMount () {
     this.tracker.init()
     this.tracker.post('render', '')
     this.tracker.post('userAgent', window.navigator.userAgent)
@@ -31,7 +36,7 @@ let AppComponent = React.createClass({
     questionSerial: 0
   }),
 
-  handleOptionClick: function (event) {
+  handleOptionClick (event) {
     let currentSerial = this.state.questionSerial
     let totalQuestionCount = this.props.survey.length
     let nextStage = 'qa'
@@ -56,12 +61,12 @@ let AppComponent = React.createClass({
     })
   },
 
-  handleRangeSlide: function (event) {
+  handleRangeSlide (event) {
     let currentSerial = this.state.questionSerial
     this.tracker.post('question_' + this.props.survey[currentSerial].question, 'value_' + event.target.value)
   },
 
-  handleNextQuestButtonClick: function (event) {
+  handleNextQuestButtonClick () {
     this.tracker.post('next_button_clicked', '')
     this.setState({
       questionSerial: this.state.questionSerial + 1
@@ -69,19 +74,20 @@ let AppComponent = React.createClass({
     })
   },
 
-  startQASection: function () {
+  startQASection () {
     this.tracker.post('QA_section_started', '')
     this.setState({
       stage: 'qa'
     })
   },
 
-  render: function () {
+  render () {
     if (this.state.stage === 'cover') {
       return <Cover coverClickHandler={this.startQASection} />
     } else if (this.state.stage === 'qa') {
       let serial = this.state.questionSerial
       let qa = this.props['survey'][serial]
+
       if (qa.optionType === 'multipleChoice') {
         return <ChoiceCard qa={qa}
                            optionClickHandler={this.handleOptionClick}

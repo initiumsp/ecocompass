@@ -1,3 +1,7 @@
+/**
+ * A component providing a slider for the user to drag and select a value
+ */
+
 require('normalize.css')
 require('styles/App.css')
 
@@ -16,26 +20,26 @@ let RangeCard = React.createClass({
     nextQuestionButtonClickHandler: React.PropTypes.func
   },
 
-  getDefaultProps: function () {
+  getDefaultProps () {
     return {
       currentValue: 50
     }
   },
 
-  getInitialState: function () {
+  getInitialState () {
     return {
       currentValue: this.props.currentValue
     }
   },
 
-  rangeSlideLocalHandler: function (event) {
+  rangeSlideLocalHandler (event) {
     this.setState({
       currentValue: event.target.value
     })
     this.props.rangeSlideHandler(event)
   },
 
-  render: function () {
+  render () {
     let {min, max, text, questionSerial, questionTotalCount, nextQuestionButtonClickHandler} = this.props
 
     return (

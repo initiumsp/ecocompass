@@ -1,3 +1,7 @@
+/**
+ * A compoent with an array of social sharing buttons
+ */
+
 require('normalize.css')
 require('styles/App.css')
 
@@ -9,6 +13,12 @@ let wechatIcon = require('../images/wechat.png')
 let weiboIcon = require('../images/weibo.png')
 let facebookIcon = require('../images/FB.png')
 let twitterIcon = require('../images/twitter.png')
+
+/**
+ * Return the link to share a URL in a mansion specified by config
+ * @param {object} config - an object containing the configurations of the sharing
+ * @returns {string}
+ */
 
 function getShareUrl (config) {
   var platform = config.platform

@@ -7,6 +7,14 @@ import final_notice from '../sources/final_notice'
 import SocialBar from './SocialBar'
 import Spinner from './Spinner'
 
+/**
+ * @param score - the final score, un-normalized
+ * @param {func} scoreNormalize - a function to normalize the score
+ * @param tracker - the event tracker (for sending statistics)
+ * @returns {XML}
+ * @constructor
+ */
+
 let ResultPage = ({score, scoreNormalize, tracker}) => {
   let commentText
 
