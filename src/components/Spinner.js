@@ -24,8 +24,10 @@ let Spinner = React.createClass({
   componentDidMount () {
     let rotateDegree = this.props.index * 90
     setTimeout(function () {
-      this.refs.pointer.style.transform = `rotate(${rotateDegree}deg)`
-      this.refs.pointer.style.webkitTransform = `rotate(${rotateDegree}deg)`
+      let transformSetting = `rotate(${rotateDegree}deg)`
+      this.refs.pointer.style.transform = transformSetting
+      this.refs.pointer.style.webkitTransform = transformSetting
+      this.refs.pointer.style.mozTransform = transformSetting
     }.bind(this), 0)
   },
 
