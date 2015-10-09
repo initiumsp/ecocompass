@@ -6,14 +6,9 @@ import React from 'react'
 let OptionList = ({options, optionClickHandler}) => <ul>
     {options.map(option => <li key={option.optionText}
                                onClick={optionClickHandler}
-                               data-score={option.optionScore}>
-                              <span id='checkbox'
-                                    data-score={option.optionScore}>
-                              </span>
-                              <span id='optiontext'
-                                    data-score={option.optionScore}>
-                                {option.optionText}
-                              </span>
+                               data-score={option.optionScore}
+                               className='option'>
+                                 {option.optionText}
                            </li>)
     }
   </ul>

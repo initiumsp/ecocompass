@@ -21,8 +21,8 @@ body {
   background: #666;
 }
 
-li {
-  list-style: none;
+.option {
+  list-style: circle;
   width: 8em;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -30,6 +30,11 @@ li {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.option:active,
+.option:focus {
+  list-style: disc;
 }
 
 li:hover {
@@ -213,17 +218,6 @@ ul {
 }
 
 
-#optiontext::before {
-  content: "○   "
-}
-
-#optiontext:active::before{
-  content: "●   "
-}
-
-#optiontext:focus::before{
-  content: "●   "
-}
 
 .rotate {
   transition: all 1s ease-in-out;
