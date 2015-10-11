@@ -92,8 +92,8 @@ let AppComponent = React.createClass({
   /**
    * Starts the QA section and reset the internal states of question serial and total score
    */
-  startQASection () {
-    this.tracker.post('QA_section_started', '')
+  startQASection (event) {
+    this.tracker.post('QA_section_started_at_entry_point', event.target.textContent || event.target.innerHTML)
     this.setState({
       stage: 'qa',
       questionSerial: 0,
