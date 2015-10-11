@@ -40,6 +40,16 @@ let survey = [
     ]
   },
   {
+    question: '教育應當儘可能公營',
+    optionType: 'multipleChoice',
+    options: [
+      { optionText: '強烈同意', optionScore: -2 },
+      { optionText: '同意', optionScore: -1 },
+      { optionText: '反對', optionScore: 1 },
+      { optionText: '強烈反對', optionScore: 2 }
+    ]
+  },
+  {
     question: '改善低收入人士生活的首要手段是政府給予財政補貼和扶持',
     optionType: 'multipleChoice',
     options: [
@@ -61,6 +71,16 @@ let survey = [
   },
   {
     question: '政府應對商品的出入境設限，以首先滿足境內需求',
+    optionType: 'multipleChoice',
+    options: [
+      { optionText: '強烈同意', optionScore: -2 },
+      { optionText: '同意', optionScore: -1 },
+      { optionText: '反對', optionScore: 1 },
+      { optionText: '強烈反對', optionScore: 2 }
+    ]
+  },
+  {
+    question: '人民根本上是通過階級而非國籍來劃分的',
     optionType: 'multipleChoice',
     options: [
       { optionText: '強烈同意', optionScore: -2 },
