@@ -31,7 +31,6 @@ let ResultPage = ({score, scoreNormalize, tracker}) => {
       <div id='rightUp'></div>
       <div id='left'></div>
       <div id='middle'>
-        <div id='result'>Result: {score}</div>
         <Spinner index={scoreNormalize(score)} />
         <div id='commentText'>{commentText}</div>
         <SocialBar tracker={tracker} />
