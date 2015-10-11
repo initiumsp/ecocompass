@@ -193,10 +193,10 @@ let survey = [
     question: '市場越自由，人民越自由',
     optionType: 'multipleChoice',
     options: [
-      { optionText: '強烈同意', optionScore: -2 },
-      { optionText: '同意', optionScore: -1 },
-      { optionText: '反對', optionScore: 1 },
-      { optionText: '強烈反對', optionScore: 2 }
+      { optionText: '強烈同意', optionScore: 2 },
+      { optionText: '同意', optionScore: 1 },
+      { optionText: '反對', optionScore: -1 },
+      { optionText: '強烈反對', optionScore: -2 }
     ]
   },
   {
@@ -224,7 +224,7 @@ let survey = [
       { optionText: '不確定', optionScore: 0 },
       { optionText: '皆非', optionScore: 0 }
     ]
-  },
+  }
 ]
 
 export default survey
