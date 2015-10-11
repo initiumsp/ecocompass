@@ -4,9 +4,9 @@ let meta = {
   // The maximum serial of "substantial questions" whose serial will be displayed in questionText
   // 0-based
   maxShowSerial: 19,
-  facebookShareTitle: '想知道你的朋友比你更左還是更右？快share給他們，看看你們是否屬於同一陣營吧！',
-  sinaweiboShareTitle: '想知道你的朋友比你更左還是更右？快share給他們，看看你們是否屬於同一陣營吧！',
-  twitterShareTitle: '想知道你的朋友比你更左還是更右？快share給他們，看看你們是否屬於同一陣營吧！'
+  facebookShareTitle: '想知道自己對經濟議題更傾向於干預還是放任？屬於左翼還是右翼？快來試試經濟指南針吧！',
+  sinaweiboShareTitle: '想知道自己對經濟議題更傾向於干預還是放任？屬於左翼還是右翼？快來試試經濟指南針吧！',
+  twitterShareTitle: '想知道自己對經濟議題更傾向於干預還是放任？屬於左翼還是右翼？快來試試經濟指南針吧！'
 }
 
 export default meta
