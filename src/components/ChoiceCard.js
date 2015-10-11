@@ -8,6 +8,7 @@ require('styles/App.css')
 import React from 'react'
 import QuestionText from './QuestionText'
 import OptionList from './OptionList'
+import app_meta from '../sources/meta_data'
 
 /**
  * @param qa - the Q&A object, containing a question and a series of options
@@ -25,9 +26,11 @@ let ChoiceCard = ({qa, optionClickHandler, questionSerial, questionTotalCount}) 
       <div id='rightUp'></div>
       <div id='left'></div>
       <div id='middle'>
-        <QuestionText text={qa.question}
-                      questionSerial={questionSerial}
-                      questionTotalCount={questionTotalCount}/>
+        {console.log(questionSerial, app_meta.maxShowSerial)}
+        {questionSerial <= app_meta.maxShowSerial
+          ? <QuestionText text={questionSerial + '/' + (app_meta.maxShowSerial + 1) + ' ' + qa.question} />
+          : <QuestionText text={qa.question}/>
+        }
         <OptionList options={qa.options} optionClickHandler={optionClickHandler} />
       </div>
       <div id='right'></div>

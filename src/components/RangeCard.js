@@ -52,7 +52,7 @@ let RangeCard = React.createClass({
       <div className='row' id='second'>
         <div id='left'></div>
         <div id='middle'>
-          <h3>{(questionSerial + 1) + '/' + questionTotalCount} {text}</h3>
+          <h3>{text}</h3>
           <div id='currentValue'>{this.state.currentValue}</div>
           <span>{min}</span>
           <input id='slider'
