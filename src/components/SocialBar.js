@@ -62,7 +62,8 @@ function getShareUrl (config) {
 let SocialBar = React.createClass({
 
   propTypes: {
-    tracker: React.PropTypes.object
+    tracker: React.PropTypes.object,
+    resetHandler: React.PropTypes.func
   },
 
   getInitialState: function () {
@@ -111,6 +112,7 @@ let SocialBar = React.createClass({
   render: function () {
     return (
       <div id='socialBar'>
+        <button className='btnPlayAgain' onClick={this.props.resetHandler}>再玩一次!</button>
         <button data-platform='facebook'
                 onClick={this.handleShareButtonClick}>
           <image src={facebookIcon}

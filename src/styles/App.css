@@ -241,6 +241,11 @@ button {
   text-decoration:none;
 }
 
+.btnPlayAgain {
+  vertical-align: top;
+  line-height: 34px;
+}
+
 button:hover {
   background-color:#c4cfbf;
 }
@@ -352,7 +357,6 @@ button#next {
     height: 32px;
   }
 
-
   #leftUp {
     background-size: 35px ;
   }
@@ -402,7 +406,6 @@ button#next {
     background-color: #AFAFAF;
   }
 
-
   #rightDown {
     background-image: url("../images/right-down.png");
     background-size: 37px;
@@ -411,4 +414,9 @@ button#next {
   button img {
     width: 25px
   }
+
+  .btnPlayAgain {
+    line-height: 29px
+  }
+
 }

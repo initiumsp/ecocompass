@@ -90,12 +90,14 @@ let AppComponent = React.createClass({
   },
 
   /**
-   * Starts the QA section.
+   * Starts the QA section and reset the internal states of question serial and total score
    */
   startQASection () {
     this.tracker.post('QA_section_started', '')
     this.setState({
-      stage: 'qa'
+      stage: 'qa',
+      questionSerial: 0,
+      totalScore: 0
     })
   },
 
@@ -132,7 +134,8 @@ let AppComponent = React.createClass({
     } else {
       return <ResultPage score={this.state.totalScore}
                          scoreNormalize={(score) => score / app_meta.maxTotalScore}
-                         tracker={this.tracker} />
+                         tracker={this.tracker}
+                         resetHandler={this.startQASection}/>
     }
   }
 })

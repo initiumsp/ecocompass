@@ -11,11 +11,12 @@ import Spinner from './Spinner'
  * @param score - the final score, un-normalized
  * @param {func} scoreNormalize - a function to normalize the score
  * @param tracker - the event tracker (for sending statistics)
+ * @param resetHandler - function to call when the user clicks "play again" button
  * @returns {XML}
  * @constructor
  */
 
-let ResultPage = ({score, scoreNormalize, tracker}) => {
+let ResultPage = ({score, scoreNormalize, tracker, resetHandler}) => {
   let commentText
 
   for (let comment of result_comments) {
@@ -32,8 +33,10 @@ let ResultPage = ({score, scoreNormalize, tracker}) => {
       <div id='left'></div>
       <div id='middle'>
         <Spinner index={scoreNormalize(score)} />
-        <div id='commentText'>{commentText}</div>
-        <SocialBar tracker={tracker} />
+        <div id='commentText'>
+          {commentText}
+        </div>
+        <SocialBar tracker={tracker} resetHandler={resetHandler} />
       </div>
       <div id='right'></div>
       <div id='leftDown'></div>
