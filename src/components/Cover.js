@@ -7,7 +7,7 @@ require('styles/App.css')
 
 import React from 'react'
 
-let initialgraphImage = require('../images/initialgraph.png')
+let initialgraphImage = require('../images/graph_begin.png')
 
 /**
  * The cover page component
@@ -25,7 +25,7 @@ let Cover = ({coverClickHandler}) =>
       <div id='left'></div>
       <div id='middle'>
         <image id='graphInitial' src={initialgraphImage}/>
-        <div id='coverText'>測測你是左派還是右派</div>
+        <div id='coverText'>測測你在經濟上是左翼還是右翼？</div>
         <div id='start'>開始</div>
       </div>
       <div id='right'></div>

@@ -4,6 +4,7 @@ body {
   background: #AFAFAF;
   font-family: Georgia, "Times New Roman", "Hiragino Sans GB", "Microsoft YaHei",
   "WenQuanYi Micro Hei", sans-serif, serif;
+  font-size: 120%;
 }
 
 .index img {
@@ -42,7 +43,7 @@ li:hover {
 }
 
 ul {
-  padding-left: 10px;
+  padding-left: 20px;
   font-size: 1.2em;
   line-height: 2em;
 }
@@ -112,7 +113,7 @@ ul {
   left: 70px;
   right: 75px;
   background-color: #147269;
-  padding: 30px;
+  padding: 40px;
 }
 
 #right {
@@ -233,7 +234,7 @@ ul {
 
 button {
   margin: 0 10px 10px 0;
-  background-color:#82ad8d;
+  background-color:#478e83;
   border:1px solid #e1e8e1;
   cursor:pointer;
   color:#ffffff;
@@ -278,12 +279,12 @@ button img {
 }
 
 button#next {
+  display: block;
   margin-top: 50px;
-  margin-left: 1em;
 }
 
 #finalNotice {
-  font-size: 0.8em;
+  font-size: 1em;
   position: absolute;
   top: 100%;
   left: 35px;
@@ -292,13 +293,9 @@ button#next {
   color: black;
 }
 
-#coverTect {
-  margin: 0 auto
-}
-
 #start {
   width: 50%;
-  margin: 50px auto !important;
+  margin: 30px auto !important;
   text-align: center;
   background-color: #14A392;
   padding: 5px;
@@ -309,6 +306,7 @@ button#next {
 #start:focus, #start:active {
   background-color: #012D27;
 }
+
 
 @media (min-width: 600px) {
   #pointer {
@@ -327,15 +325,15 @@ button#next {
   }
 
   #graphInitial {
-    width: 70%;
-    left: 15%;
-    right: 15%
+    width: 50%;
+    left: 25%;
+    right: 25%
   }
 
   #graphInitial {
-    width: 70%;
-    left: 15%;
-    right: 15%
+    width: 50%;
+    left: 25%;
+    right: 25%
   }
 }
 
@@ -412,11 +410,23 @@ button#next {
   }
 
   button img {
-    width: 25px
+    width: 20px
   }
 
   .btnPlayAgain {
-    line-height: 29px
+    line-height: 24px;
+    display: block;
   }
 
+  #socialBar {
+    text-align: left;
+  }
+
+  #coverText {
+    margin-top: 30px
+  }
+
+  #start {
+    margin: 30px auto !important;
+  }
 }
