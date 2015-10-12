@@ -4,7 +4,7 @@ body {
   background: #AFAFAF;
   font-family: Georgia, "Times New Roman", "Hiragino Sans GB", "Microsoft YaHei",
   "WenQuanYi Micro Hei", sans-serif, serif;
-  font-size: 120%;
+  font-size: 100%;
 }
 
 .index img {
@@ -160,7 +160,8 @@ ul {
 #coverText {
   position: relative;
   text-align: center;
-  margin-top: 30px
+  margin-top: 30px;
+  font-size: 1em;
 }
 
 #graph {
@@ -248,7 +249,7 @@ button {
 }
 
 button:hover {
-  background-color:#c4cfbf;
+  background-color:#225b50;
 }
 
 button:active {
@@ -284,8 +285,9 @@ button#next {
 }
 
 #finalNotice {
-  font-size: 1em;
+  font-size: 0.8em;
   position: absolute;
+  line-height: 2em;
   top: 100%;
   left: 35px;
   right: 37px;
@@ -334,6 +336,10 @@ button#next {
     width: 50%;
     left: 25%;
     right: 25%
+  }
+
+  body {
+    font-size: 120%;
   }
 }
 
@@ -423,10 +429,14 @@ button#next {
   }
 
   #coverText {
-    margin-top: 30px
+    margin-top: 20px
   }
 
   #start {
-    margin: 30px auto !important;
+    margin: 20px auto !important;
+  }
+
+  #commentText {
+    margin-top: 10px;
   }
 }
