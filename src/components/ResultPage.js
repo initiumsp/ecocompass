@@ -6,6 +6,7 @@ import result_comments from '../sources/result_comments'
 import final_notice from '../sources/final_notice'
 import SocialBar from './SocialBar'
 import Spinner from './Spinner'
+let logoImage = require('../images/initiumLogo.png')
 
 /**
  * @param score - the final score, un-normalized
@@ -32,6 +33,7 @@ let ResultPage = ({score, scoreNormalize, tracker, resetHandler}) => {
       <div id='rightUp'></div>
       <div id='left'></div>
       <div id='middle'>
+        <img className='initiumLogo' src={logoImage} />
         <Spinner index={scoreNormalize(score)} />
         <div id='commentText'>
           {commentText}

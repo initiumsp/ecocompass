@@ -309,6 +309,13 @@ button#next {
   background-color: #012D27;
 }
 
+.initiumLogo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+}
 
 @media (min-width: 600px) {
   #pointer {
