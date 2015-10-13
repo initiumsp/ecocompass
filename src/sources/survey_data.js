@@ -130,7 +130,7 @@ let survey = [
     ]
   },
   {
-    question: '土地完全可以作為商品在市場上自由買買',
+    question: '土地完全可以作為商品在市場上自由買賣',
     optionType: 'multipleChoice',
     options: [
       { optionText: '強烈同意', optionScore: 2 },
