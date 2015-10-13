@@ -28,7 +28,7 @@ let ChoiceCard = ({qa, optionClickHandler, questionSerial, questionTotalCount}) 
       <div id='middle'>
         {console.log(questionSerial, app_meta.maxShowSerial)}
         {questionSerial <= app_meta.maxShowSerial
-          ? <QuestionText text={questionSerial + '/' + (app_meta.maxShowSerial + 1) + ' ' + qa.question} />
+          ? <QuestionText text={(questionSerial + 1) + '/' + (app_meta.maxShowSerial + 1) + ' ' + qa.question} />
           : <QuestionText text={qa.question}/>
         }
         <OptionList options={qa.options} optionClickHandler={optionClickHandler} />
