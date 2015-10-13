@@ -132,6 +132,7 @@ let AppComponent = React.createClass({
                           nextQuestionButtonClickHandler={this.handleNextQuestButtonClick} />
       }
     } else {
+      this.tracker.post('total_score_before_normalization', this.state.totalScore)
       return <ResultPage score={this.state.totalScore}
                          scoreNormalize={(score) => score / app_meta.maxTotalScore}
                          tracker={this.tracker}
