@@ -9,7 +9,7 @@ import React from 'react'
 import app_meta from '../sources/meta_data'
 import qrcode from './qrcode'
 
-let wechatQrImage = require('../images/wechatQr.png')
+let wechatQrImage = require('../images/fallbackQR.gif')
 let wechatIcon = require('../images/wechat.png')
 let weiboIcon = require('../images/weibo.png')
 let facebookIcon = require('../images/FB.png')
