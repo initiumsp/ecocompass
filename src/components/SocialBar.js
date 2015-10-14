@@ -114,16 +114,25 @@ let SocialBar = React.createClass({
 
   getQrcodeImgSrc: function () {
 
-    const qrTypeNumber = 4
+    let url = window.location.href
+    let urlLen = url.length
+
+    // Heuristic determination of how detailed the QR code should be
+    let qrTypeNumber = Math.floor((urlLen - 40) / 20) + 4
+    console.log('qrTypeNumber=', qrTypeNumber)
     const qrErrorCorrectLevel = 'M'
 
-    let qr = qrcode(qrTypeNumber, qrErrorCorrectLevel)
-    qr.addData(window.location.href)
-    qr.make()
-
-    let imgString = qr.createImgTag()
-    let re = /src="([^"]*)"/i
-    return re.exec(imgString)[1]
+    try {
+      let qr = qrcode(qrTypeNumber, qrErrorCorrectLevel)
+      qr.addData(url)
+      qr.make()
+      let imgString = qr.createImgTag()
+      let re = /src="([^"]*)"/i
+      return re.exec(imgString)[1]
+    } catch (error) {
+      // Fallback if anything went wrong
+      return wechatQrImage
+    }
   },
 
   render: function () {
