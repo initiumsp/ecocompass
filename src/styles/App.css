@@ -313,8 +313,7 @@ button#next {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 60px;
-  height: 60px;
+  width: 3em;
 }
 
 @media (min-width: 600px) {
@@ -347,6 +346,10 @@ button#next {
 
   body {
     font-size: 120%;
+  }
+
+  .initiumLogo {
+    width: 4em;
   }
 }
 
