@@ -131,6 +131,7 @@ let SocialBar = React.createClass({
       return re.exec(imgString)[1]
     } catch (error) {
       // Fallback if anything went wrong
+      console.log(error)
       return wechatQrImage
     }
   },
