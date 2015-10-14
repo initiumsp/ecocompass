@@ -7,8 +7,9 @@ require('styles/App.css')
 
 import React from 'react'
 import app_meta from '../sources/meta_data'
+import qrcode from './qrcode'
 
-let wechatQrImage = require('../images/wechatQr.png')
+let wechatQrImage = require('../images/fallbackQR.gif')
 let wechatIcon = require('../images/wechat.png')
 let weiboIcon = require('../images/weibo.png')
 let facebookIcon = require('../images/FB.png')
@@ -111,6 +112,29 @@ let SocialBar = React.createClass({
     })
   },
 
+  getQrcodeImgSrc: function () {
+
+    let url = window.location.href
+    let urlLen = url.length
+
+    // Heuristic determination of how detailed the QR code should be
+    let qrTypeNumber = Math.floor((urlLen - 40) / 20) + 4
+    console.log('qrTypeNumber=', qrTypeNumber)
+    const qrErrorCorrectLevel = 'M'
+
+    try {
+      let qr = qrcode(qrTypeNumber, qrErrorCorrectLevel)
+      qr.addData(url)
+      qr.make()
+      let imgString = qr.createImgTag()
+      let re = /src="([^"]*)"/i
+      return re.exec(imgString)[1]
+    } catch (error) {
+      // Fallback if anything went wrong
+      return wechatQrImage
+    }
+  },
+
   render: function () {
     return (
       <div id='socialBar'>
@@ -133,7 +157,9 @@ let SocialBar = React.createClass({
         <button onClick={this.handleWechatShareButtonClick}>
           <image src={wechatIcon}/>
         </button>
-        <div id='code' style={{display: this.state.displayWechatQrImage}}><image src={wechatQrImage} /></div>
+        <div id='code' style={{display: this.state.displayWechatQrImage}}>
+          <image src={this.getQrcodeImgSrc()} />
+        </div>
       </div>
     )
   }

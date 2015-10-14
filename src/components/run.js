@@ -14,4 +14,4 @@ ReactDOM.render(<App survey={survey} />, document.getElementById('app'))
 *  To debug result page, uncommnet the two lines below and comment the line above that calls ReactDOM.
 * */
 //import ResultPage from './ResultPage'
-//ReactDOM.render(<ResultPage score={-0.8} scoreNormalize={x => x} tracker={{}} />, document.getElementById('app'))
+//ReactDOM.render(<ResultPage score={-0.8} scoreNormalize={x => x} tracker={{post: () => {}}} />, document.getElementById('app'))

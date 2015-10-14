@@ -17,7 +17,7 @@ let result_comments = [
   {
     minScore: 1,
     maxScore: 20,
-    commentText: '你在經濟光譜上偏右，主張政府應剋制，由市場應發揮主要作用'
+    commentText: '你在經濟光譜上偏右，主張政府應剋制，應由市場發揮主要作用'
   },
   {
     minScore: 21,
