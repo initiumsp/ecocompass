@@ -350,6 +350,8 @@ button#next {
 
   .initiumLogo {
     width: 4em;
+    bottom: auto;
+    top:0
   }
 }
 
