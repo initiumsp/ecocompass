@@ -11,6 +11,7 @@ import Cover from './Cover'
 import ChoiceCard from './ChoiceCard'
 import RangeCard from './RangeCard'
 import ResultPage from './ResultPage'
+import ExamQuestion from './ExamQuestion'
 import createTracker from './Tracker'
 import app_meta from '../sources/meta_data'
 
@@ -89,6 +90,10 @@ let AppComponent = React.createClass({
     })
   },
 
+  handleExamOptionClick () {
+    console.log('exam option clicked')
+  },
+
   /**
    * Starts the QA section and reset the internal states of question serial and total score
    */
@@ -130,6 +135,10 @@ let AppComponent = React.createClass({
                           questionTotalCount={this.props.survey.length}
                           rangeSlideHandler={this.handleRangeSlide}
                           nextQuestionButtonClickHandler={this.handleNextQuestButtonClick} />
+      } else if (qa.optionType === 'examQuestion') {
+        return <ExamQuestion question={qa.question}
+                             options={qa.options}
+                             correctOption={qa.correctOption}/>
       }
     } else {
       this.tracker.post('total_score_before_normalization', this.state.totalScore)

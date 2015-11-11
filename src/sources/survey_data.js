@@ -1,5 +1,16 @@
 let survey = [
   {
+    question: '世界上最大的國家是?',
+    optionType: 'examQuestion',
+    options: [
+      { optionText: 'China' },
+      { optionText: 'India' },
+      { optionText: 'Russia' },
+      { optionText: 'USA' }
+    ],
+    correctOption: 'Russia'
+  },
+  {
     question: '政府應該為最低工資立法',
     optionType: 'multipleChoice',
     options: [
