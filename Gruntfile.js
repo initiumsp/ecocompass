@@ -23,6 +23,16 @@ module.exports = function(grunt) {
       }
     },
 
+
+    copy: {
+      dist: {
+        files: [
+          {expand: true, flatten: true, src: ['thumbnail.jpg'], dest: 'dist/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['meta.json'], dest: 'dist/', filter: 'isFile'},
+        ]
+      }
+    },
+
     'gh-pages': {
       options: {
         base: 'dist',
@@ -52,10 +62,11 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-gh-pages');
   grunt.loadNpmTasks('grunt-rsync');
+  grunt.loadNpmTasks('grunt-contrib-copy')
 
   grunt.registerTask('serve',  ['shell:serve']);
   grunt.registerTask('serve:force',  ['shell:forceserve']);
-  grunt.registerTask('build',  ['shell:clean', 'shell:build']);
+  grunt.registerTask('build',  ['shell:clean', 'shell:build','copy:dist']);
   grunt.registerTask('deploy:staging', ['rsync']);
   grunt.registerTask('deploy:prod', ['gh-pages']);
 };
