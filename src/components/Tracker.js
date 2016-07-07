@@ -48,7 +48,7 @@ let createInitiumLabTracker = (appLabel) => ({
   post (keyInput, valueInput) {
     let XMLHttpRequest = window.XMLHttpRequest
 
-    let url = `http://s.init.im:8081/remember/${this.target}/`
+    let url = `https://ss.initiumlab.com/remember/${this.target}/`
     let request = new XMLHttpRequest()
     let message = {
       username: this.uuid,
