@@ -30,4 +30,3 @@ To deploy to production server:
 ```
 grunt deploy:prod
 ```
-
